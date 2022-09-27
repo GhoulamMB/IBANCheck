@@ -13,64 +13,15 @@ namespace IBAN_Check.ViewModel
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(PropertyName));
         }
-
         private string _iban;
 
         public string Iban
         {
             get { return _iban; }
-            set 
-            { 
+            set
+            {
                 _iban = value;
                 OnPropertyChanged(nameof(Iban));
-            }
-        }
-
-        private string _country;
-
-        public string Country
-        {
-            get { return _country; }
-            set
-            {
-                _country = value;
-                OnPropertyChanged(nameof(Country));
-            }
-        }
-
-        private string _bankcode;
-
-        public string Bank_code
-        {
-            get { return _bankcode; }
-            set
-            {
-                _bankcode = value;
-                OnPropertyChanged(nameof(Bank_code));
-            }
-        }
-
-        private string _accountNo;
-
-        public string AccountNo
-        {
-            get { return _accountNo; }
-            set
-            {
-                _accountNo = value;
-                OnPropertyChanged(nameof(AccountNo));
-            }
-        }
-
-        private string _branch;
-
-        public string Branch
-        {
-            get { return _branch; }
-            set
-            {
-                _branch = value;
-                OnPropertyChanged(nameof(Branch));
             }
         }
 
