@@ -1,6 +1,7 @@
 ﻿using IBAN_Check.Commands;
 using IBAN_Check.Helpers;
 using IBAN_Check.Model;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 #pragma warning disable CS8618
 namespace IBAN_Check.ViewModel
@@ -13,6 +14,8 @@ namespace IBAN_Check.ViewModel
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(PropertyName));
         }
+
+        public ObservableCollection<ibanDetails> details { get; set; }
         private string _iban;
 
         public string Iban
@@ -25,7 +28,7 @@ namespace IBAN_Check.ViewModel
             }
         }
 
-        private ibanDetails _details;
+        /*private ibanDetails _details;
 
         public ibanDetails details
         {
@@ -35,7 +38,7 @@ namespace IBAN_Check.ViewModel
                 _details = value;
                 OnPropertyChanged(nameof(details));
             }
-        }
+        }*/
 
         public FetchCommand FetchCommand { get; set; }
 
@@ -47,13 +50,14 @@ namespace IBAN_Check.ViewModel
         public void getData(string iban)
         {
             var Resultiban = IBANHelper.FetchData(iban);
-            details = new()
+            ibanDetails result = new()
             {
                 Country = Resultiban.iban_data.country,
                 BankCode = Resultiban.iban_data.bank_code,
                 AccountNo = Resultiban.iban_data.account_number,
                 Branch = Resultiban.iban_data.branch
             };
+            details.Add(result);
         }
     }
 }

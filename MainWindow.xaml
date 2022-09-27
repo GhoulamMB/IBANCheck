@@ -23,17 +23,9 @@
                 CommandParameter="{Binding Iban}"/>
         <Separator Margin="0 10"/>
         <StackPanel DataContext="{StaticResource vm}">
-            <DataGrid>
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Country"
-                                        Binding="{Binding Source={StaticResource vm}, Path=details.Country, UpdateSourceTrigger=PropertyChanged}"/>
-                    <DataGridTextColumn Header="Bank Code"
-                                        Binding="{Binding Source={StaticResource vm}, Path=details.BankCode, UpdateSourceTrigger=PropertyChanged}"/>
-                    <DataGridTextColumn Header="Account No"
-                                        Binding="{Binding Source={StaticResource vm}, Path=details.AccountNo, UpdateSourceTrigger=PropertyChanged}"/>
-                    <DataGridTextColumn Header="Branch"
-                                        Binding="{Binding Source={StaticResource vm}, Path=details.Branch, UpdateSourceTrigger=PropertyChanged}"/>
-                </DataGrid.Columns>
+            <DataGrid
+                ItemsSource="{Binding details}"
+                AutoGenerateColumns="True">
             </DataGrid>
         </StackPanel>
     </StackPanel>
