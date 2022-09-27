@@ -26,20 +26,6 @@ namespace IBAN_Check.ViewModel
             }
         }
 
-
-
-        private IBAN? _resultIBAN;
-
-        public IBAN Resultiban
-        {
-            get { return _resultIBAN; }
-            set
-            {
-                _resultIBAN = value;
-                OnPropertyChanged(nameof(Resultiban));
-            }
-        }
-
         private string _country;
 
         public string Country
@@ -100,18 +86,16 @@ namespace IBAN_Check.ViewModel
             }
         }
 
-
         public FetchCommand FetchCommand { get; set; }
 
         public ibanVM()
         {
-            Resultiban = new();
             FetchCommand = new(this);
             details = new();
         }
         public void getData(string iban)
         {
-            Resultiban = IBANHelper.FetchData(iban);
+            var Resultiban = IBANHelper.FetchData(iban);
             details = new()
             {
                 Country = Resultiban.iban_data.country,
