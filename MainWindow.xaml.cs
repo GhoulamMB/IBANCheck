@@ -12,13 +12,9 @@ namespace IBAN_Check
 #pragma warning disable CS8618
     public partial class MainWindow : Window
     {
-
-        ibanVM ibanVM { get; set; }
-
         public MainWindow()
         {
             InitializeComponent();
-            ibanVM = new ibanVM();
         }
     }
 }

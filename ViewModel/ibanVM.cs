@@ -88,16 +88,44 @@ namespace IBAN_Check.ViewModel
             }
         }
 
+        private ibanDetails _details;
+
+        public ibanDetails details
+        {
+            get { return _details; }
+            set
+            { 
+                _details = value;
+                OnPropertyChanged(nameof(details));
+            }
+        }
+
+
         public FetchCommand FetchCommand { get; set; }
 
         public ibanVM()
         {
             Resultiban = new();
             FetchCommand = new(this);
+            details = new();
         }
         public void getData(string iban)
         {
             Resultiban = IBANHelper.FetchData(iban);
+            details = new()
+            {
+                Country = Resultiban.iban_data.country,
+                BankCode = Resultiban.iban_data.bank_code,
+                AccountNo = Resultiban.iban_data.account_number,
+                Branch = Resultiban.iban_data.branch
+            };
         }
+    }
+    public class ibanDetails
+    {
+        public string Country { get; set; }
+        public string BankCode { get; set; }
+        public string AccountNo { get; set; }
+        public string Branch { get; set; }
     }
 }

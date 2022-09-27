@@ -22,18 +22,14 @@
                 Command="{Binding FetchCommand}"
                 CommandParameter="{Binding Iban}"/>
         <Separator Margin="0 10"/>
-
-        <ListView>
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <Grid DataContext="{StaticResource vm}">
-                        <TextBlock Text="{Binding Country, UpdateSourceTrigger=PropertyChanged}"/>
-                        <TextBlock Text="{Binding Bank_code, Mode=TwoWay , UpdateSourceTrigger=PropertyChanged}"/>
-                        <TextBlock Text="{Binding AccountNo, Mode=TwoWay , UpdateSourceTrigger=PropertyChanged}"/>
-                        <TextBlock Text="{Binding Branch, Mode=TwoWay , UpdateSourceTrigger=PropertyChanged}"/>
-                    </Grid>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+        <DataGrid ItemsSource="{Binding details}"
+                  AutoGenerateColumns="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Country"/>
+                <DataGridTextColumn Header="Bank Code"/>
+                <DataGridTextColumn Header="Account No"/>
+                <DataGridTextColumn Header="Branch"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </StackPanel>
 </Window>
