@@ -23,10 +23,28 @@
                 CommandParameter="{Binding Iban}"/>
         <Separator Margin="0 10"/>
         <StackPanel DataContext="{StaticResource vm}">
-            <DataGrid
-                ItemsSource="{Binding details}"
-                AutoGenerateColumns="True">
-            </DataGrid>
+            <ListView ItemsSource="{Binding details}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn 
+                            Header="Country"
+                            DisplayMemberBinding="{Binding Country}"
+                            Width="auto"/>
+                        <GridViewColumn
+                            Header="Bank Code"
+                            DisplayMemberBinding="{Binding BankCode}"
+                            Width="auto"/>
+                        <GridViewColumn
+                            Header="Account No"
+                            DisplayMemberBinding="{Binding AccountNo}"
+                            Width="auto"/>
+                        <GridViewColumn
+                            Header="Branch"
+                            DisplayMemberBinding="{Binding Branch}"
+                            Width="auto"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
         </StackPanel>
     </StackPanel>
 </Window>
