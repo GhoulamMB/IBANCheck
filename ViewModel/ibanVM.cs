@@ -28,18 +28,6 @@ namespace IBAN_Check.ViewModel
             }
         }
 
-        /*private ibanDetails _details;
-
-        public ibanDetails details
-        {
-            get { return _details; }
-            set
-            { 
-                _details = value;
-                OnPropertyChanged(nameof(details));
-            }
-        }*/
-
         public FetchCommand FetchCommand { get; set; }
 
         public ibanVM()
