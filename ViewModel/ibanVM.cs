@@ -105,11 +105,4 @@ namespace IBAN_Check.ViewModel
             };
         }
     }
-    public class ibanDetails
-    {
-        public string Country { get; set; }
-        public string BankCode { get; set; }
-        public string AccountNo { get; set; }
-        public string Branch { get; set; }
-    }
 }
