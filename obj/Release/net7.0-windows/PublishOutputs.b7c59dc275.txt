@@ -1,0 +1,7 @@
+C:\Users\mohdz\Desktop\C#_Projects\IBAN_Check\bin\Release\net7.0-windows\publish\IBAN_Check.exe
+C:\Users\mohdz\Desktop\C#_Projects\IBAN_Check\bin\Release\net7.0-windows\publish\IBAN_Check.dll
+C:\Users\mohdz\Desktop\C#_Projects\IBAN_Check\bin\Release\net7.0-windows\publish\IBAN_Check.deps.json
+C:\Users\mohdz\Desktop\C#_Projects\IBAN_Check\bin\Release\net7.0-windows\publish\IBAN_Check.runtimeconfig.json
+C:\Users\mohdz\Desktop\C#_Projects\IBAN_Check\bin\Release\net7.0-windows\publish\IBAN_Check.pdb
+C:\Users\mohdz\Desktop\C#_Projects\IBAN_Check\bin\Release\net7.0-windows\publish\Newtonsoft.Json.dll
+C:\Users\mohdz\Desktop\C#_Projects\IBAN_Check\bin\Release\net7.0-windows\publish\RestSharp.dll
